@@ -46,6 +46,8 @@ class MyApp extends ConsumerWidget {
           theme: theme ? ThemeData.dark() : ThemeData.light(),
           home: AnnotatedRegion<SystemUiOverlayStyle>(
               value: SystemUiOverlayStyle.light.copyWith(
+                  systemNavigationBarColor:
+                      const Color.fromRGBO(0, 165, 158, 1),
                   statusBarColor: const Color.fromRGBO(0, 165, 158, 1)),
               child: const SignUpForm()),
         );
