@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:low/provider/api.dart';
+
 import 'package:low/screens/home.dart';
 import 'package:low/screens/quiz.dart';
 
@@ -19,7 +19,7 @@ class _NavigationTabState extends State<NavigationTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: [
-        const UserProfile(),
+        const HomeScreen(),
         const QuizPage(),
         const Settings(),
       ][selectedIndex],
