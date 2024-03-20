@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../components/nav.dart';
+import 'otp_screen.dart';
 
 class SignUpForm extends ConsumerWidget {
   const SignUpForm({super.key});
@@ -100,7 +100,7 @@ class SignUpForm extends ConsumerWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: ((context) =>
-                                          const NavigationTab())));
+                                          const OTPScreen())));
                             },
                             child: const Text(
                               'Sign Up',
