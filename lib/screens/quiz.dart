@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:low/quiz/take_quiz.dart';
+import 'package:low/quiz/quiz_year.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
@@ -33,9 +33,7 @@ class _QuizPageState extends State<QuizPage> {
                   style: const ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.purpleAccent)),
-                  onPressed: () {
-                    Get.to(() => const TakeQuiz());
-                  },
+                  onPressed: () {},
                   child: const Text(
                     'START YOUR QUIZ',
                     style: TextStyle(fontSize: 20),

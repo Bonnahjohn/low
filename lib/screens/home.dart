@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
 import 'package:low/provider/subject_api.dart';
+import 'package:low/quiz/quiz_year.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -62,7 +64,7 @@ class HomeScreen extends ConsumerWidget {
                   //the choosing of the subject
                   // mmmmmmmmmmmmmmmmmmmmmmmmmmmmm
                   const Text(
-                    'Let\'s Start',
+                    'Let\'s play',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   const SizedBox(
@@ -71,6 +73,8 @@ class HomeScreen extends ConsumerWidget {
                   Expanded(
                     child: data.when(
                       data: (subjects) {
+                        subjects.sort(
+                            (a, b) => a.subjectName.compareTo(b.subjectName));
                         return GridView.builder(
                           itemCount: subjects.length,
                           gridDelegate:
@@ -83,7 +87,11 @@ class HomeScreen extends ConsumerWidget {
                             final subject = subjects[index];
                             return SubjectCard(
                               sub: subject,
-                              press: () {},
+                              press: () {
+                                Get.to(() => ChooseQuizYear(
+                                      sub: subject,
+                                    ));
+                              },
                             );
                           },
                         );
@@ -115,7 +123,9 @@ class SubjectCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        press();
+      },
       child: SizedBox(
         child: Card(
           elevation: 6,
@@ -166,15 +176,15 @@ Widget buildQuizInfoCard() {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Welcome to the Passco Quiz!',
+            'Welcome to  Passco Quiz App!',
             style: TextStyle(
-              fontSize: 24,
+              fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
           ),
           SizedBox(height: 20),
           Text(
-            'Test your knowledge and learn new things.',
+            'Study WAEC past questions and answers and prepare for your West African Examinations Council exam.',
             style: TextStyle(fontSize: 16),
           ),
           SizedBox(height: 20),
