@@ -1,12 +1,19 @@
 import 'dart:convert';
-
+import 'package:hive/hive.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+part "subjectapi.g.dart";
 
-class Subject {
+@HiveType(typeId: 0)
+class Subject extends HiveObject {
+  @HiveField(0)
   late String subjectName;
+
+  @HiveField(1)
   late String subjectImage;
+  @HiveField(2)
   late int subjectId;
+  @HiveField(3)
   late List<String> subjectYear;
   Subject(
       {required this.subjectId,
@@ -50,5 +57,14 @@ final apiserviceForSubject = Provider<SubjectApiService>((ref) {
 });
 
 final apiServiceData = FutureProvider<List<Subject>>((ref) async {
-  return SubjectApiService.getSubjectApi();
+  //return SubjectApiService.getSubjectApi();
+  try {
+    final subjects = await SubjectApiService.getSubjectApi();
+    final subjectBox = Hive.box<Subject>('subject');
+    subjectBox.addAll(subjects);
+    print(subjectBox);
+    return subjects;
+  } catch (error) {
+    throw Exception('Failed to fetch subjects: $error');
+  }
 });

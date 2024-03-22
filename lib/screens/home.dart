@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:get/get.dart';
-import 'package:low/provider/subject_api.dart';
+import 'package:low/provider/subjectapi.dart';
 import 'package:low/quiz/quiz_year.dart';
+
+import '../provider/profile_avatar.dart';
 
 class HomeScreen extends ConsumerWidget {
   const HomeScreen({super.key});
@@ -36,15 +38,16 @@ class HomeScreen extends ConsumerWidget {
                           Text('Let\'s make this day productive.')
                         ],
                       ),
-                      ClipRRect(
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(40)),
-                        child: Container(
-                          width: 50,
-                          height: 50,
-                          color: Colors.red,
-                        ),
-                      ),
+                      // ClipRRect(
+                      //   borderRadius:
+                      //       const BorderRadius.all(Radius.circular(40)),
+                      //   child: Container(
+                      //     width: 50,
+                      //     height: 50,
+                      //     color: Colors.red,
+                      //   ),
+                      // ),
+                      CircleAvatarWithUpload()
                     ],
                   ),
                   //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm

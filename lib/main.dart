@@ -1,9 +1,12 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:get/get.dart';
-
+import 'package:low/provider/subjectapi.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:low/auth/sign_up.dart';
 
@@ -18,8 +21,13 @@ final loadede = StateProvider<double>((ref) {
 });
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  Directory directory = await getApplicationDocumentsDirectory();
+  Hive.init(directory.path);
   await Hive.initFlutter();
   await Hive.openBox('store');
+  Hive.registerAdapter<Subject>(SubjectAdapter());
+  await Hive.openBox<Subject>('subject');
 
   runApp(const ProviderScope(
       child: MaterialApp(
