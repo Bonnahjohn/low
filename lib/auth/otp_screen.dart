@@ -59,7 +59,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     child: TextField(
                       controller: controllers[index],
                       textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white, fontSize: 25),
+                      style: const TextStyle(color: Colors.black, fontSize: 25),
                       keyboardType: TextInputType.number,
                       maxLength: 1,
                       onChanged: (String value) {
@@ -69,6 +69,9 @@ class _OTPScreenState extends State<OTPScreen> {
                         }
                       },
                       decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        filled: true,
+                        fillColor: Colors.white,
                         counterText: "",
                       ),
                     ),
