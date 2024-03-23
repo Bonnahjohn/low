@@ -7,7 +7,9 @@ import 'package:low/quiz/quiz_year.dart';
 import '../provider/profile_avatar.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({
+    super.key,
+  });
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final data = ref.watch(apiServiceData);
@@ -25,11 +27,11 @@ class HomeScreen extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Hi User',
+                            'Hi ',
                             style: TextStyle(
                                 fontSize: 22,
                                 fontStyle: FontStyle.italic,
@@ -38,15 +40,6 @@ class HomeScreen extends ConsumerWidget {
                           Text('Let\'s make this day productive.')
                         ],
                       ),
-                      // ClipRRect(
-                      //   borderRadius:
-                      //       const BorderRadius.all(Radius.circular(40)),
-                      //   child: Container(
-                      //     width: 50,
-                      //     height: 50,
-                      //     color: Colors.red,
-                      //   ),
-                      // ),
                       CircleAvatarWithUpload()
                     ],
                   ),

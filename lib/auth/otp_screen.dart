@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import '../components/nav.dart';
 
 class OTPScreen extends StatefulWidget {
-  const OTPScreen({super.key});
+  const OTPScreen({
+    super.key,
+  });
 
   @override
   _OTPScreenState createState() => _OTPScreenState();

@@ -37,7 +37,7 @@ class _CircleAvatarWithUploadState extends State<CircleAvatarWithUpload> {
           backgroundColor: Colors.blue,
           backgroundImage: _image != null ? FileImage(_image!) : null,
           child: _image == null
-              ? Icon(
+              ? const Icon(
                   Icons.person,
                   size: 50,
                   color: Colors.white,
