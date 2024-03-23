@@ -12,6 +12,7 @@ class SignUpForm extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final username = ref.watch(usernameProvider);
     final phoneNumber = ref.watch(phoneProvider);
+    TextEditingController usersnameInput = TextEditingController();
 
     return Scaffold(
       backgroundColor: const Color.fromRGBO(0, 165, 158, 1),
@@ -57,12 +58,12 @@ class SignUpForm extends ConsumerWidget {
                   // mmmmmmmmmmm
 
                   TextField(
-                    controller: TextEditingController(text: username),
-                    onChanged: (value) =>
-                        ref.read(usernameProvider.notifier).state = value,
+                    style: const TextStyle(color: Colors.black),
+                    controller: usersnameInput,
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
                         hintText: 'UserName',
+                        hintStyle: TextStyle(color: Colors.black),
                         fillColor: Colors.white.withOpacity(0.9),
                         filled: true,
                         border: const OutlineInputBorder(
@@ -78,9 +79,11 @@ class SignUpForm extends ConsumerWidget {
                   // mmmmmmmmmmm
 
                   TextField(
+                    style: const TextStyle(color: Colors.black),
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                         hintText: 'Phone Number',
+                        hintStyle: TextStyle(color: Colors.black),
                         suffixIcon: const Icon(Icons.numbers),
                         fillColor: Colors.white.withOpacity(0.9),
                         filled: true,

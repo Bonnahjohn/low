@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, must_be_immutable
 
 import 'package:flutter/material.dart';
 import 'package:low/auth/sign_up.dart';
@@ -8,7 +8,8 @@ import 'package:low/screens/quiz.dart';
 import '../screens/setting.dart';
 
 class NavigationTab extends StatefulWidget {
-  const NavigationTab({super.key});
+  String? usersnameInput;
+  NavigationTab({super.key, required this.usersnameInput});
 
   @override
   State<NavigationTab> createState() => _NavigationTabState();
@@ -16,6 +17,7 @@ class NavigationTab extends StatefulWidget {
 
 class _NavigationTabState extends State<NavigationTab> {
   late int selectedIndex = 0;
+  String? usersnameInput;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +30,7 @@ class _NavigationTabState extends State<NavigationTab> {
       bottomNavigationBar: NavigationBar(
           backgroundColor: Colors.grey.shade700.withOpacity(0.2),
           indicatorShape: const BeveledRectangleBorder(),
-          indicatorColor: const Color.fromRGBO(0, 165, 158, 1).withOpacity(0.8),
+          indicatorColor: const Color.fromRGBO(0, 165, 158, 1).withOpacity(0.6),
           selectedIndex: selectedIndex,
           onDestinationSelected: (value) {
             setState(() {
@@ -41,13 +43,16 @@ class _NavigationTabState extends State<NavigationTab> {
                   Icons.home_outlined,
                   color: Colors.white,
                 ),
-                icon: Icon(Icons.home),
+                icon: Icon(
+                  Icons.home,
+                  size: 30,
+                ),
                 label: 'Home'),
             //mmmmmmmmmmmmmmmmm
             NavigationDestination(
                 selectedIcon: Icon(Icons.quiz_outlined, color: Colors.white),
                 icon: Icon(Icons.quiz),
-                label: 'Quiz'),
+                label: 'History'),
 
             //mmmmmmmmmmmmmmmmmm
 

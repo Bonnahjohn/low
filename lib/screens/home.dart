@@ -7,7 +7,7 @@ import 'package:low/quiz/quiz_year.dart';
 import '../provider/profile_avatar.dart';
 
 class HomeScreen extends ConsumerWidget {
-  const HomeScreen({
+  HomeScreen({
     super.key,
   });
   @override
@@ -16,7 +16,7 @@ class HomeScreen extends ConsumerWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-              padding: const EdgeInsets.only(top: 6, left: 12, right: 12),
+              padding: const EdgeInsets.only(top: 8, left: 12, right: 12),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -27,11 +27,11 @@ class HomeScreen extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
+                      const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'Hi ',
+                            'Hi',
                             style: TextStyle(
                                 fontSize: 22,
                                 fontStyle: FontStyle.italic,
@@ -84,9 +84,12 @@ class HomeScreen extends ConsumerWidget {
                             return SubjectCard(
                               sub: subject,
                               press: () {
-                                Get.to(() => ChooseQuizYear(
-                                      sub: subject,
-                                    ));
+                                Get.to(
+                                    duration: const Duration(seconds: 1),
+                                    transition: Transition.zoom,
+                                    () => ChooseQuizYear(
+                                          sub: subject,
+                                        ));
                               },
                             );
                           },
@@ -114,6 +117,7 @@ class HomeScreen extends ConsumerWidget {
 class SubjectCard extends StatelessWidget {
   final Subject sub;
   final Function press;
+
   const SubjectCard({super.key, required this.sub, required this.press});
 
   @override

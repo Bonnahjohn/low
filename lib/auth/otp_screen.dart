@@ -96,7 +96,9 @@ class _OTPScreenState extends State<OTPScreen> {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => const NavigationTab())));
+                            builder: ((context) => NavigationTab(
+                                  usersnameInput: '',
+                                ))));
                   },
                   child: const Text(
                     'Verify OTP',
