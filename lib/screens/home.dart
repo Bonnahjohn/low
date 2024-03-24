@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:low/provider/subjectapi.dart';
 import 'package:low/quiz/quiz_year.dart';
 
+import '../loading/shimmer_quiz_year.dart';
 import '../provider/profile_avatar.dart';
 
 class HomeScreen extends ConsumerWidget {
@@ -96,9 +97,7 @@ class HomeScreen extends ConsumerWidget {
                         );
                       },
                       error: (error, stackTrace) => Text('Error: $error'),
-                      loading: () => const Center(
-                        child: CircularProgressIndicator(),
-                      ),
+                      loading: () => gridviewer(),
                     ),
                   ),
                   const SizedBox(

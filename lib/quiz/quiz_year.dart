@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../loading/shimmer_quiz_year.dart';
 import '../provider/subjectapi.dart';
 
 class ChooseQuizYear extends ConsumerWidget {
@@ -55,9 +56,7 @@ class ChooseQuizYear extends ConsumerWidget {
           },
           error: (error, stackTrace) =>
               const Center(child: Text('Unable to fetch data')),
-          loading: () => const Center(
-            child: CircularProgressIndicator(),
-          ),
+          loading: () => title(),
         ),
       )),
     );

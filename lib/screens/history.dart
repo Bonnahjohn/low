@@ -4,14 +4,14 @@ import 'package:low/quiz/quiz_year.dart';
 
 import '../loading/shimmer_quiz_year.dart';
 
-class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+class HistoryPage extends StatefulWidget {
+  const HistoryPage({super.key});
 
   @override
-  State<QuizPage> createState() => _QuizPageState();
+  State<HistoryPage> createState() => _HistoryPageState();
 }
 
-class _QuizPageState extends State<QuizPage> {
+class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

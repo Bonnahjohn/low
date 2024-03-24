@@ -24,7 +24,7 @@ class _NavigationTabState extends State<NavigationTab> {
     return Scaffold(
       body: [
         HomeScreen(),
-        const QuizPage(),
+        const HistoryPage(),
         const Settings(),
       ][selectedIndex],
       bottomNavigationBar: NavigationBar(
