@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:low/auth/sign_up.dart';
 
 import 'package:low/screens/home.dart';
-import 'package:low/screens/quiz.dart';
+import 'package:low/screens/history.dart';
 import '../screens/setting.dart';
 
 class NavigationTab extends StatefulWidget {
