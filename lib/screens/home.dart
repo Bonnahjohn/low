@@ -8,7 +8,7 @@ import '../loading/shimmer_quiz_year.dart';
 import '../provider/profile_avatar.dart';
 
 class HomeScreen extends ConsumerWidget {
-  HomeScreen({
+  const HomeScreen({
     super.key,
   });
   @override
@@ -24,11 +24,11 @@ class HomeScreen extends ConsumerWidget {
                   //mmmmmmmmmmmmmmm
                   //the greetings of the user and the user profile picture
                   //mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
-                  Row(
+                  const Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(

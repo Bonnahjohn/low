@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables, must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:low/auth/sign_up.dart';
 
 import 'package:low/screens/home.dart';
 import 'package:low/screens/history.dart';
@@ -23,7 +22,7 @@ class _NavigationTabState extends State<NavigationTab> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: [
-        HomeScreen(),
+        const HomeScreen(),
         const HistoryPage(),
         const Settings(),
       ][selectedIndex],
@@ -50,7 +49,7 @@ class _NavigationTabState extends State<NavigationTab> {
                 label: 'Home'),
             //mmmmmmmmmmmmmmmmm
             NavigationDestination(
-                selectedIcon: Icon(Icons.quiz_outlined, color: Colors.white),
+                selectedIcon: Icon(Icons.history_outlined, color: Colors.white),
                 icon: Icon(Icons.history),
                 label: 'History'),
 

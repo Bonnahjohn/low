@@ -60,8 +60,8 @@ class UserProfile extends ConsumerWidget {
                         return Center(
                           child: Card(
                             child: ListTile(
-                              title: Text('${data[index].name}',
-                                  style: TextStyle(color: Colors.red)),
+                              title: Text(data[index].name,
+                                  style: const TextStyle(color: Colors.red)),
                               trailing: Text('${data[index].number}'),
                             ),
                           ),

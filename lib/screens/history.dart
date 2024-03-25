@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:low/quiz/quiz_year.dart';
-
 import '../loading/shimmer_quiz_year.dart';
 
 class HistoryPage extends StatefulWidget {
@@ -14,12 +11,10 @@ class HistoryPage extends StatefulWidget {
 class _HistoryPageState extends State<HistoryPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SafeArea(
-          child: Padding(
-        padding: const EdgeInsets.all(8),
         child: QuizListLoading(),
-      )),
+      ),
     );
   }
 }

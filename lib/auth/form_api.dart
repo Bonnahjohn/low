@@ -2,8 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:low/auth/sign_up.dart';
 
 class UserAuth {
   late String userName;
@@ -27,7 +25,6 @@ Future<UserAuth> registerUser(String userName) async {
     }),
   );
   if (response.statusCode != 2001) {
-    print("succeessful ${response.body}");
     return UserAuth.fromJson(jsonDecode(response.body));
   }
   throw Exception('Username loading faile');
@@ -66,7 +63,7 @@ class _MyWidgetState extends State<MyWidget> {
                 onPressed: () {
                   registerUser(_controller.text);
                 },
-                child: Text('data'))
+                child: const Text('data'))
           ],
         )),
       ),

@@ -63,7 +63,7 @@ class SignUpForm extends ConsumerWidget {
                     keyboardType: TextInputType.name,
                     decoration: InputDecoration(
                         hintText: 'UserName',
-                        hintStyle: TextStyle(color: Colors.black),
+                        hintStyle: const TextStyle(color: Colors.black),
                         fillColor: Colors.white.withOpacity(0.9),
                         filled: true,
                         border: const OutlineInputBorder(
@@ -83,7 +83,7 @@ class SignUpForm extends ConsumerWidget {
                     keyboardType: TextInputType.phone,
                     decoration: InputDecoration(
                         hintText: 'Phone Number',
-                        hintStyle: TextStyle(color: Colors.black),
+                        hintStyle: const TextStyle(color: Colors.black),
                         suffixIcon: const Icon(Icons.numbers),
                         fillColor: Colors.white.withOpacity(0.9),
                         filled: true,

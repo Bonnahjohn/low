@@ -1,11 +1,17 @@
+// ignore_for_file: sized_box_for_whitespace, avoid_print, library_private_types_in_public_api
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CircleAvatarWithUpload extends StatefulWidget {
+  const CircleAvatarWithUpload({super.key});
+
   @override
-  _CircleAvatarWithUploadState createState() => _CircleAvatarWithUploadState();
+  _CircleAvatarWithUploadState createState() {
+    return _CircleAvatarWithUploadState();
+  }
 }
 
 class _CircleAvatarWithUploadState extends State<CircleAvatarWithUpload> {

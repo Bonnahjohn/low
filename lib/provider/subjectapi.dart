@@ -62,7 +62,6 @@ final apiServiceData = FutureProvider<List<Subject>>((ref) async {
     final subjects = await SubjectApiService.getSubjectApi();
     final subjectBox = Hive.box<Subject>('subject');
     subjectBox.addAll(subjects);
-    print(subjectBox);
     return subjects;
   } catch (error) {
     throw Exception('Failed to fetch subjects: $error');

@@ -12,7 +12,7 @@ class _QuizListLoadingState extends State<QuizListLoading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: gridviewer(),
+      body: title(),
     );
   }
 }
@@ -64,7 +64,8 @@ Widget gridviewer() {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 6),
-                  child: Container(color: Colors.white, child: Icon(Icons.abc)),
+                  child: Container(
+                      color: Colors.white, child: const Icon(Icons.abc)),
                 ),
                 const SizedBox(
                   height: 12,
