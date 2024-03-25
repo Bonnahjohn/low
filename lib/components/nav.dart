@@ -51,7 +51,7 @@ class _NavigationTabState extends State<NavigationTab> {
             //mmmmmmmmmmmmmmmmm
             NavigationDestination(
                 selectedIcon: Icon(Icons.quiz_outlined, color: Colors.white),
-                icon: Icon(Icons.quiz),
+                icon: Icon(Icons.history),
                 label: 'History'),
 
             //mmmmmmmmmmmmmmmmmm
